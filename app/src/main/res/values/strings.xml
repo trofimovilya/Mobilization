@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Mobilization</string>
+
+    <plurals name="plural_albums">
+        <item quantity="one">%d album</item>
+        <item quantity="other">%d albums</item>
+    </plurals>
+
+    <plurals name="plural_tracks">
+        <item quantity="one">%d track</item>
+        <item quantity="other">%d tracks</item>
+    </plurals>
+
+    <string name="artists">Artists</string>
+    <string name="artist_detail">Artist info</string>
+    <string name="biography">Biography</string>
+    <string name="artist_photo">Artist photo</string>
+    <string name="open_artist_link">Open artist website</string>
+
+    <string name="no_info">No information</string>
+    <string name="no_artist_name">@string/no_info</string>
+    <string name="no_biography">@string/no_info</string>
+    <string name="no_artists">No artists</string>
+
+    <string name="status_successful_response">The data is up to date now</string>
+    <string name="status_server_not_responding">Server is not available</string>
+    <string name="status_no_connection">No internet connection</string>
+    <string name="status_no_yandex_music_app">To go to the listening, you must first install Yandex.Music app</string>
+</resources>

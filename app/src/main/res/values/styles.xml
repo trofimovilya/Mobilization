@@ -1,0 +1,41 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowBackground">@color/background</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="PrimaryTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:textColor">@color/textPrimary</item>
+    </style>
+
+    <style name="SecondaryTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/font_small</item>
+        <item name="android:textColor">@color/textSecondary</item>
+    </style>
+
+    <style name="ExpandedTitleTextAppearance" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">@dimen/font_large</item>
+    </style>
+
+    <style name="FabStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/spacing_medium</item>
+        <item name="borderWidth">0dp</item>
+        <item name="elevation">@dimen/fab_elevation</item>
+        <item name="pressedTranslationZ">@dimen/fab_pressed_translation_z</item>
+        <item name="rippleColor">@color/rippleFab</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.ColoredStatusBar" parent="AppTheme.NoActionBar"/>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+</resources>

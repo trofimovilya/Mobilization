@@ -1,0 +1,19 @@
+<resources>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/realTransparent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.ColoredStatusBar" parent="AppTheme.NoActionBar">
+        <item name="android:statusBarColor">@color/primaryDark</item>
+        <item name="android:actionButtonStyle">@style/actionButtonStyle</item>
+    </style>
+
+    <style name="actionButtonStyle" parent="Widget.AppCompat.Light.ActionButton">
+        <item name="android:paddingEnd">@dimen/spacing_medium</item>
+    </style>
+</resources>

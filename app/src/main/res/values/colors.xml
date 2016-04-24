@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#967AD2</color>
+    <color name="primaryDark">#7F67B2</color>
+    <color name="accent">#FDD74E</color>
+    <color name="background">@android:color/white</color>
+
+    <color name="textPrimary">@android:color/black</color>
+    <color name="textSecondary">#999999</color>
+
+    <color name="iconPrimary">@color/textPrimary</color>
+    <color name="iconSecondary">@color/textSecondary</color>
+    <color name="iconFab">@android:color/black</color>
+    <color name="iconToolbar">@android:color/white</color>
+
+    <color name="coverFrame">#E0E0E0</color>
+    <color name="divider">#F2F2F2</color>
+    <color name="controlHighlight">#E0E0E0</color>
+    <color name="rippleFab">@android:color/white</color>
+
+    <color name="gradientStartColor">#60000000</color>
+    <color name="gradientCenterColor">#30000000</color>
+    <color name="gradientEndColor">#00000000</color>
+
+    <color name="realTransparent">#01000000</color>
+</resources>

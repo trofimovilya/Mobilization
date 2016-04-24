@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="plural_albums">
+        <item quantity="one">%d альбом</item>
+        <item quantity="few">%d альбома</item>
+        <item quantity="many">%d альбомов</item>
+        <item quantity="other">%d альбомов</item>
+    </plurals>
+
+    <plurals name="plural_tracks">
+        <item quantity="one">%d песня</item>
+        <item quantity="few">%d песни</item>
+        <item quantity="many">%d песен</item>
+        <item quantity="other">%d песен</item>
+    </plurals>
+
+    <string name="artists">Исполнители</string>
+    <string name="artist_detail">Информация об исполнителе</string>
+    <string name="biography">Биография</string>
+    <string name="artist_photo">Фото исполнителя</string>
+    <string name="open_artist_link">Перейти на сайт исполнителя</string>
+
+    <string name="no_info">Нет информации</string>
+    <string name="no_artist_name">@string/no_info</string>
+    <string name="no_biography">@string/no_info</string>
+    <string name="no_artists">Нет исполнителей</string>
+
+    <string name="status_successful_response">Данные успешно обновлены</string>
+    <string name="status_server_not_responding">Сервер не доступен</string>
+    <string name="status_no_connection">Нет подключения к интернету</string>
+    <string name="status_no_yandex_music_app">Для перехода к прослушиванию необходимо установить приложение Яндекс.Музыка</string>
+</resources>

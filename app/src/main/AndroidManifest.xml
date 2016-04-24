@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="ru.ilyatrofimov.mobilization">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+            android:name=".MobilizationApp"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
+        <activity
+                android:name=".activities.MainActivity"
+                android:label="@string/app_name"
+                android:theme="@style/AppTheme.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+                android:name=".activities.DetailActivity"
+                android:label="@string/artist_detail"
+                android:parentActivityName=".activities.MainActivity"
+                android:theme="@style/AppTheme.NoActionBar.ColoredStatusBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="ru.ilyatrofimov.mobilization.activities.MainActivity"/>
+        </activity>
+
+        <meta-data android:name="DATABASE" android:value="mobilization.db"/>
+        <meta-data android:name="VERSION" android:value="2"/>
+        <meta-data android:name="QUERY_LOG" android:value="false"/>
+        <meta-data android:name="DOMAIN_PACKAGE_NAME"
+                   android:value="ru.ilyatrofimov.mobilization.model"/>
+    </application>
+</manifest>

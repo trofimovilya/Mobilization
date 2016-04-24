@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".activities.DetailActivity">
+    <item android:id="@+id/action_open_link"
+          android:icon="@drawable/icon_open_in_new"
+          android:title="@string/open_artist_link"
+          android:orderInCategory="100"
+          android:visible="false"
+          app:showAsAction="ifRoom"/>
+</menu>
