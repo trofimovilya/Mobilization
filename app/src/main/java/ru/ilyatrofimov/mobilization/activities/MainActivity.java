@@ -13,6 +13,9 @@ import ru.ilyatrofimov.mobilization.R;
 
 
 /**
+ * Main activity
+ * Holds everything that consider of toolbar and transitions
+ *
  * @author Ilya Trofimov
  */
 public class MainActivity extends AppCompatActivity {

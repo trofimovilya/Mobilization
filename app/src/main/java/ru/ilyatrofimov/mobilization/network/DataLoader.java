@@ -12,12 +12,19 @@ import ru.ilyatrofimov.mobilization.MobilizationApp;
 
 
 /**
+ * Util class to async fetch data from net
+ *
  * @author Ilya Trofimov
  */
 public final class DataLoader {
+    // JSON Data URL
     private static final String URL
             = "http://download.cdn.yandex.net/mobilization-2016/artists.json";
 
+    /**
+     * Gets Volley instance and requests for json
+     * Posts EventBus events on successful or error response
+     */
     public static void requestJSON() {
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, URL, null
                 , new Response.Listener<JSONArray>() {
@@ -35,9 +42,9 @@ public final class DataLoader {
         VolleySingleton.getInstance().getRequestQueue().add(request);
     }
 
-    private DataLoader() {
-    }
-
+    /**
+     * Singleton according Google's guides to have one request queue on whole app
+     */
     public static final class VolleySingleton {
         private static VolleySingleton sInstance = null;
         private RequestQueue mRequestQueue;
@@ -57,5 +64,9 @@ public final class DataLoader {
         public RequestQueue getRequestQueue() {
             return mRequestQueue;
         }
+    }
+
+    private DataLoader() {
+        // To prevent creating instances
     }
 }

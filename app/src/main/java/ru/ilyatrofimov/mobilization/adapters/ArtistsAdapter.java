@@ -19,6 +19,8 @@ import java.util.List;
 
 
 /**
+ * Artists Adapter holds RecyclerView.ViewHolder that represents an Artist
+ *
  * @author Ilya Trofimov
  */
 public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ViewHolderArtistsList> {
@@ -37,6 +39,7 @@ public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ViewHold
         View view = mInflater.inflate(R.layout.list_item_artist, parent, false);
         final ViewHolderArtistsList holder = new ViewHolderArtistsList(view);
 
+        // Post event when an item was clicked. Event holds the view and it's position in adapter
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,8 +52,9 @@ public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolderArtistsList holder, int position) {
-        Artist artist = mArtistsList.get(position);
+        // Sets values to views and nothing else
 
+        Artist artist = mArtistsList.get(position);
         String coverSmallURL = artist.getCoverSmall();
         String name = artist.getName();
         String genres = artist.getGenres();
@@ -119,6 +123,9 @@ public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ViewHold
         }
     }
 
+    /**
+     * Item clicked event for EventBus
+     */
     public static class ItemClickedEvent {
         private int position;
         private View view;
@@ -128,10 +135,16 @@ public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ViewHold
             this.view = view;
         }
 
+        /**
+         * @return position of clicked item in adapter
+         */
         public int getPosition() {
             return position;
         }
 
+        /**
+         * @return clicked view
+         */
         public View getView() {
             return view;
         }

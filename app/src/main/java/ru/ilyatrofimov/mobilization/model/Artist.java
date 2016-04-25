@@ -8,11 +8,12 @@ import com.orm.dsl.Unique;
 
 
 /**
+ * Artist entity
+ *
  * @author Ilya Trofimov
  */
 @Table
 public class Artist implements Comparable<Artist>, Parcelable {
-
     @Unique
     private Long id;
     private String name;
@@ -154,6 +155,9 @@ public class Artist implements Comparable<Artist>, Parcelable {
         dest.writeString(coverBig);
     }
 
+    /**
+     * Standard builder implementation
+     */
     public static final class ArtistBuilder {
         private Long id;
         private String name;

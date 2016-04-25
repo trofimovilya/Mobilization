@@ -34,8 +34,8 @@ import ru.ilyatrofimov.mobilization.model.Artist;
 
 
 /**
- * Artist's detail activity.
- * Holds everything that consider UI of toolbar, animations and transitions;
+ * Artist's detail activity
+ * Holds everything that consider of toolbar, animations and transitions
  *
  * @author Ilya Trofimov
  */
@@ -45,6 +45,7 @@ public class DetailActivity extends AppCompatActivity {
     private static final int CONTENT_ANIM_START_DELAY = 200;
     private static final int ANIM_BACKUP_START_DELAY = 2000;
     private static final int LANDSCAPE_APPBAR_HEIGHT_DP = 200;
+
     private static final String YANDEX_MUSIC_URI = "yandexmusic://artist/";
 
     private boolean mDisplayLocked = true;
@@ -88,6 +89,9 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Initializes toolbar
+     */
     private void initToolbar() {
         setSupportActionBar(mToolbar);
 
@@ -105,10 +109,14 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Initializes transitions
+     */
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void initTransitions() {
         Window window = getWindow();
 
+        // Wait until system elements will be loaded
         postponeEnterTransition();
         final View decor = window.getDecorView();
         decor.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
@@ -137,7 +145,7 @@ public class DetailActivity extends AppCompatActivity {
 
             @Override
             public void onTransitionEnd(Transition transition) {
-                startEnterAnimation();
+                startEnterAnimation(); // Start enter animation only when transition finishes
             }
 
             @Override
@@ -164,7 +172,7 @@ public class DetailActivity extends AppCompatActivity {
 
             @Override
             public void onTransitionEnd(Transition transition) {
-                setHighQualityCover();
+                setHighQualityCover(); // When shared element transition finishes we can
             }
 
             @Override
@@ -181,8 +189,11 @@ public class DetailActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Starts enter animation that shows fab and gradients on appbar
+     */
     private void startEnterAnimation() {
-        mDisplayLocked = false;
+        mDisplayLocked = false; // Unlock display
 
         mFab.show();
 
@@ -203,6 +214,11 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Starts return animation that hides fab and gradients on appbar
+     *
+     * @param listener calls when animation ends
+     */
     private void startReturnAnimation(final ReturnAnimationListener listener) {
         mFab.hide();
 
@@ -247,7 +263,7 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     /**
-     * Sets high-quality cover into ImageView and uses low-quality cover as placeholder
+     * Sets high-quality cover into ImageView and low-quality cover as placeholder
      */
     private void setHighQualityCover() {
         if (mPicassoRequest != null) {
@@ -286,7 +302,7 @@ public class DetailActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_detail, menu);
 
         if (mArtist != null) {
-            String link = mArtist.getLink(); // Display menu button if link is exists
+            String link = mArtist.getLink(); // Display menu button if link exists
             menu.findItem(R.id.action_open_link).setVisible(link != null && !link.isEmpty());
         }
 

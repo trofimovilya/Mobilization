@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 
 /**
+ * Util class to parse JSON into POJO
+ *
  * @author Ilya Trofimov
  */
 public final class JSONParser {
@@ -111,12 +113,8 @@ public final class JSONParser {
         return (jsonObject != null && jsonObject.has(key) && !jsonObject.isNull(key));
     }
 
-
     private static boolean isJSONArrayValid(JSONArray jsonArray) {
         return (jsonArray != null && jsonArray.length() > 0);
-    }
-
-    private JSONParser() {
     }
 
     private static final String JSON_KEY_ID = "id";
@@ -129,4 +127,8 @@ public final class JSONParser {
     private static final String JSON_KEY_COVER = "cover";
     private static final String JSON_KEY_COVER_SMALL = "small";
     private static final String JSON_KEY_COVER_BIG = "big";
+
+    private JSONParser() {
+        // To prevent creating instances
+    }
 }

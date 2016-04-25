@@ -15,6 +15,8 @@ import ru.ilyatrofimov.mobilization.model.Artist;
 
 
 /**
+ * Detail Activity Fragment holds views that displays artist info
+ *
  * @author Ilya Trofimov
  */
 public class DetailActivityFragment extends Fragment {
@@ -37,8 +39,7 @@ public class DetailActivityFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View view = inflater.inflate(R.layout.fragment_detail, container, false);
         ButterKnife.bind(this, view);
 
@@ -50,6 +51,8 @@ public class DetailActivityFragment extends Fragment {
     }
 
     private void init() {
+        // Sets values to views and nothing else
+
         String genres = mArtist.getGenres();
         String biography = mArtist.getDescription();
         int albums = mArtist.getAlbums();
