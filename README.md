@@ -25,6 +25,6 @@ The app uses standard UI-features such as:
 - EventBus by GreenRobot
 - Sugar ORM
 
-### Requirements
+#### Requirements
 - API 14 or higher 
 - There is a chance that to build the app you have to disable Instant Run in Android Studio 2.0 (because of Sugar ORM) 
