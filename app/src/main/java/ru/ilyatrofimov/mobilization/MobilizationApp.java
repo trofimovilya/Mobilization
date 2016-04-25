@@ -7,9 +7,9 @@ import com.orm.SugarContext;
 
 
 /**
- * @author Ilya Trofimov
- *
  * App instance
+ *
+ * @author Ilya Trofimov
  */
 public class MobilizationApp extends Application {
     public static final boolean IS_LOLLIPOP_OR_HIGHER

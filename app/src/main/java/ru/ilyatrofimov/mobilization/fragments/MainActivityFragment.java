@@ -74,10 +74,11 @@ public class MainActivityFragment extends Fragment implements SwipeRefreshLayout
         mSwipeRefreshLayout.setOnRefreshListener(this);
         mSwipeRefreshLayout.setColorSchemeResources(R.color.accent);
 
-        // Refresh if db is empty
         if (SugarRecord.count(Artist.class) == 0) {
+            // Refresh if db is empty
             onRefresh();
-        } else { // Show content from db otherwise
+        } else {
+            // Show content from db otherwise
             List<Artist> artists = SugarRecord.listAll(Artist.class);
             Collections.sort(artists, Collections.<Artist>reverseOrder());
             mArtistsAdapter.setArtistsList(artists);
@@ -91,6 +92,7 @@ public class MainActivityFragment extends Fragment implements SwipeRefreshLayout
     /**
      * EventBus handler that being called when an list item will be clicked
      * Starts detail activity for clicked artist
+     *
      * @param clickedItem event that holds the clicked view and it's position
      */
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -120,7 +122,8 @@ public class MainActivityFragment extends Fragment implements SwipeRefreshLayout
                 Bundle bundle = ActivityOptionsCompat
                         .makeSceneTransitionAnimation(parent, pairs).toBundle();
                 ActivityCompat.startActivity(parent, intent, bundle);
-            } else { // Just start activity w/o any effects otherwise
+            } else {
+                // Just start activity w/o any effects otherwise
                 startActivity(intent);
             }
         }
@@ -138,6 +141,7 @@ public class MainActivityFragment extends Fragment implements SwipeRefreshLayout
     /**
      * EventBus handler that being called when the server returns JSON response
      * Updates the adapter and displays status toasts
+     *
      * @param response in JSONArray format
      */
     @Subscribe
@@ -146,8 +150,10 @@ public class MainActivityFragment extends Fragment implements SwipeRefreshLayout
         ArrayList<Artist> artists;
 
         try {
-            artists = JSONParser.parseArtistsJSON(response); // Try to parse response
-        } catch (JSONException e) { // Show toast and return if an exception occurs
+            // Try to parse response
+            artists = JSONParser.parseArtistsJSON(response);
+        } catch (JSONException e) {
+            // Show toast and return if an exception occurs
             Toast.makeText(getContext(), getString(R.string.status_server_not_responding)
                     , Toast.LENGTH_LONG).show();
             return;
@@ -166,6 +172,7 @@ public class MainActivityFragment extends Fragment implements SwipeRefreshLayout
     /**
      * EventBus handler that being called when a connection problem occurs
      * Displays error status toasts
+     *
      * @param error Volley Error
      */
     @Subscribe

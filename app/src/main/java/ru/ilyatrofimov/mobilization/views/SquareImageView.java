@@ -6,9 +6,9 @@ import android.widget.ImageView;
 
 
 /**
- * @author Ilya Trofimov
- *
  * ImageView which always has sqaure shape
+ *
+ * @author Ilya Trofimov
  */
 public class SquareImageView extends ImageView {
     public SquareImageView(Context context) {

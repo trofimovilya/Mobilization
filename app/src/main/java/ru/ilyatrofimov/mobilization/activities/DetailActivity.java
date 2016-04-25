@@ -145,7 +145,8 @@ public class DetailActivity extends AppCompatActivity {
 
             @Override
             public void onTransitionEnd(Transition transition) {
-                startEnterAnimation(); // Start enter animation only when transition finishes
+                // Start enter animation only when transition will be finished
+                startEnterAnimation();
             }
 
             @Override
@@ -172,7 +173,8 @@ public class DetailActivity extends AppCompatActivity {
 
             @Override
             public void onTransitionEnd(Transition transition) {
-                setHighQualityCover(); // When shared element transition finishes we can
+                // Set high quality cover when shared element transition will be finished
+                setHighQualityCover();
             }
 
             @Override
@@ -268,9 +270,11 @@ public class DetailActivity extends AppCompatActivity {
     private void setHighQualityCover() {
         if (mPicassoRequest != null) {
             try {
-                if (mCoverImageView.getDrawable() != null) { // Use low-quality cover as placeholder
+                if (mCoverImageView.getDrawable() != null) {
+                    // Use low-quality cover as placeholder
                     mPicassoRequest.placeholder(mCoverImageView.getDrawable());
-                } else { // Use default cover as placeholder if even low-quality hasn't loaded yet
+                } else {
+                    // Use default cover as placeholder if even low-quality hasn't loaded yet
                     mPicassoRequest.placeholder(R.drawable.default_cover_artist);
                 }
             } catch (IllegalStateException e) {
@@ -302,7 +306,8 @@ public class DetailActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_detail, menu);
 
         if (mArtist != null) {
-            String link = mArtist.getLink(); // Display menu button if link exists
+            // Display menu button if link exists
+            String link = mArtist.getLink();
             menu.findItem(R.id.action_open_link).setVisible(link != null && !link.isEmpty());
         }
 
@@ -329,7 +334,7 @@ public class DetailActivity extends AppCompatActivity {
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onBackPressed() {
-        // Postpone transitions and back press event until the return animation is completed
+        // Postpone transitions and back press event until the return animation will be completed
         if (MobilizationApp.IS_LOLLIPOP_OR_HIGHER) {
             postponeEnterTransition();
             startReturnAnimation(new ReturnAnimationListener() {
@@ -366,7 +371,7 @@ public class DetailActivity extends AppCompatActivity {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent pEvent) {
-        // Block display until the animation is completed
+        // Block display to prevent scrolling until animations are completed
         if (!mDisplayLocked) {
             return super.dispatchTouchEvent(pEvent);
         }

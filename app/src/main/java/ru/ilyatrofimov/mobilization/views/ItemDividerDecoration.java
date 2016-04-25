@@ -10,9 +10,9 @@ import ru.ilyatrofimov.mobilization.R;
 
 
 /**
- * @author Ilya Trofimov
- *
  * Item decoration to draw divider between items in RecyclerView
+ *
+ * @author Ilya Trofimov
  */
 public class ItemDividerDecoration extends RecyclerView.ItemDecoration {
     private Drawable mDivider;
